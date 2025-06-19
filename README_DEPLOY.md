@@ -1,26 +1,104 @@
+# 📊 Task 5 – Feedback Collection Tool (Shelfex Internship)
 
-# 🛠 Full Stack Feedback Tool – Render Deployment Instructions
+## 🧩 Problem Statement
 
-## 📦 Backend (Node.js + Express)
-
-### 🔗 Deploy on Render (Web Service)
-1. Go to https://render.com and create a new Web Service.
-2. Connect GitHub and choose this repo.
-3. Set root directory to: `backend`
-4. Set **Start Command**: `npm start`
-5. Set Environment Variables (from `.env.example`):
-   - `PORT=5000`
-   - `MONGO_URI=your_mongodb_connection_string`
-   - `JWT_SECRET=your_secret`
-
-## 🌐 Frontend (React)
-
-### 🔗 Deploy on Render (Static Site)
-1. Go to https://render.com and create a new Static Site.
-2. Set root directory: `frontend`
-3. Set **Build Command**: `npm run build`
-4. Set **Publish Directory**: `build`
-5. Auto-deploy from GitHub.
+Build a web application where users can submit feedback and ratings, and admins can log in to view a dashboard summarizing all feedback.
 
 ---
-✅ After deploy, make sure frontend is calling correct backend URL (CORS, API base).
+
+## 🚀 Features
+
+- Feedback form for users (Name, Rating, Message)
+- Admin login system (JWT authentication)
+- Admin dashboard with:
+  - Feedback list
+  - Star ratings
+  - Bar chart (rating distribution)
+- Toast notifications
+- Responsive UI with Tailwind CSS
+- Authentication-protected routes
+
+---
+
+## 🛠 Tech Stack
+
+- **Frontend:** React, Tailwind CSS, Chart.js, React Router
+- **Backend:** Node.js, Express.js, MongoDB
+- **Authentication:** JWT (JSON Web Tokens)
+- **Charts:** Chart.js (via `react-chartjs-2`)
+- **Other Tools:** Toastify, Axios, dotenv, bcrypt
+
+---
+
+## 📁 Folder Structure
+
+feedback-tool-shelfex/
+│
+├── backend/
+│ ├── routes/ # Feedback & admin routes
+│ ├── models/ # Mongoose models
+│ ├── middleware/ # JWT auth middleware
+│ ├── server.js # Entry point
+│ └── .env # Environment variables
+│
+├── frontend/
+│ ├── src/
+│ │ ├── pages/ # FeedbackForm, AdminLogin, Dashboard
+│ │ ├── components/ # Reusable components (Navbar etc.)
+│ │ ├── App.js
+│ │ └── index.js
+│ ├── tailwind.config.js
+│ └── package.json
+│
+├── README.md
+└── .gitignore
+
+---
+
+## ▶️ How to Run
+
+### 🔧 Backend:
+cd backend
+npm install
+npm start
+
+Create a .env file in /backend:
+PORT=5000
+MONGO_URI=your_mongo_uri
+JWT_SECRET=your_jwt_secret
+💻 Frontend:
+cd frontend
+npm install
+npm start
+Make sure backend is running on port 5000 or update the API base URL in frontend accordingly.
+
+
+📸 Screenshots:
+### 🔐 Admin Login  
+![Admin Login](screenshots/admin-login.png)
+
+### ✍️ Feedback Form  
+![Feedback Form](screenshots/feedback-form.png)
+
+### 📊 Admin Dashboard  
+![Dashboard](screenshots/dashboard.png)
+
+### 🧠 MongoDB Compass View  
+![MongoDB Data](screenshots/database-compass.png)
+
+
+👨‍💻 Developed by
+Shubham Maurya
+[https://github.com/shubhammaurya8840]
+
+---
+
+## ✅ Next Steps:
+
+1. Create a file: `README.md` inside your Task 5 repo root
+2. Paste the content above
+3. Save and run:
+```bash
+git add README.md
+git commit -m "Add Task 5 README"
+git push
