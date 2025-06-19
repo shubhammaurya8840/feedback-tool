@@ -13,10 +13,7 @@ const AdminLogin = () => {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post(
-        "https://feedback-tool.onrender.com/api/admin/login",
-        form
-      );
+      const res = await axios.post("https://feedback-tool.onrender.com/api/admin/login", form);
       localStorage.setItem("token", res.data.token);
       toast.success("Login successful");
       navigate("/admin/dashboard");

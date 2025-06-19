@@ -10,7 +10,8 @@ const FeedbackForm = () => {
   };
 
   const handleSubmit = async () => {
-    await axios.post("http://localhost:5000/api/feedback", form);
+    axios.post("https://feedback-tool.onrender.com/api/feedback", data)
+;
     toast.success("Feedback submitted!");
     setForm({ name: "", email: "", feedback: "", rating: 5 });
   };
