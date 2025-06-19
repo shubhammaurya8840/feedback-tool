@@ -1,7 +1,8 @@
 import express from "express";
 import cors from "cors";
-import feedbackRoutes from "./routes/feedback.js";
-import adminRoutes from "./routes/admin.js";
+import feedbackRoutes from "./routes/feedbackRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
+
 
 const app = express();
 
